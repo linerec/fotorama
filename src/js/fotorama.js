@@ -501,6 +501,25 @@ jQuery.Fotorama = function ($fotorama, opts) {
 
         setMeasures(imgData.measures.width, imgData.measures.height, imgData.measures.ratio, index);
 
+        var optRotation = "";
+        switch (dataFrame.rotation) {
+          case 0:
+            optRotation = "";
+            break;
+          case 1:
+            optRotation = "rotateImg90";
+            break;
+          case 2:
+            optRotation = "rotateImg180";
+            break;
+          case 3:
+            optRotation = "rotateImg270";
+            break;
+          default:
+            optRotation = "";
+            break;
+        }
+
         $img
             .off('load error')
             .addClass(imgClass + (fullFLAG ? ' ' + imgFullClass : ''))
